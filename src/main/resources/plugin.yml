@@ -1,0 +1,4 @@
+  name: mckotlinlibs
+  main: org.cultofclang.minecraft.mckotlinlibs.Plugin
+  version: @version@
+  load: STARTUP
