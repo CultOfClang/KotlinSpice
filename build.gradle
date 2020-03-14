@@ -9,8 +9,8 @@ plugins {
 group 'org.cultofclang.minecraft'
 version '0.1'
 
-if (System.hasProperty("BUILD_NUMBER")) {
-    version += "." + System.getenv("BUILD_NUMBER")
+if (System.getenv("GITHUB_RUN_NUMBER")!=null) {
+    pluginVersion += "." + System.getenv("GITHUB_RUN_NUMBER")
 }
 
 repositories {
