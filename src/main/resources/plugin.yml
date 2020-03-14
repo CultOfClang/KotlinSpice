@@ -1,4 +1,5 @@
-  name: mckotlinlibs
-  main: org.cultofclang.minecraft.mckotlinlibs.Plugin
+  name: KotlinSpice
+  main: org.cultofclang.minecraft.kotlinspice.Plugin
   version: @version@
   load: STARTUP
+  api-version: '1.15'

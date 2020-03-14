@@ -1,4 +1,4 @@
-package org.cultofclang.minecraft.mckotlinlibs
+package org.cultofclang.minecraft.kotlinspice
 
 import org.bukkit.plugin.java.JavaPlugin
 
