@@ -82,6 +82,9 @@ if (project.hasProperty("plugin_path") && plugin_path) {
 }
 
 def void yum(String s) {
-    dependencies.implementation(s)
-    dependencies.shadow(s)
+    dependencies.compile(s)
+
+    //i want these to be system, but this make the pom be runtime :(
+    // but this is hacky anyhow
+    // dependencies.shadow(s)
 }
