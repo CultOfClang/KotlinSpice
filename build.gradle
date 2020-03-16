@@ -26,13 +26,19 @@ dependencies {
     //this is shit
 
     yum "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0"
+
+    yum "com.charleskorn.kaml:kaml:0.16.+"
     yum "org.jetbrains.exposed:exposed-core:0.+"
     yum "org.jetbrains.exposed:exposed-dao:0.+"
     yum "org.jetbrains.exposed:exposed-jdbc:0.+"
 
     yum "org.xerial:sqlite-jdbc:3.+"
     yum "org.slf4j:slf4j-api:1.+"
+
+
     yum 'com.sksamuel.hoplite:hoplite-yaml:1.+'
+    yum 'com.sksamuel.hoplite:hoplite-core:1.+'
+
     yum "com.github.andrewoma.kwery:core:0.+"
     yum "com.github.andrewoma.kwery:mapper:0.+"
 }
@@ -67,9 +73,16 @@ publishing {
         }
     }
     publications {
+        maven(MavenPublication) {
+            from components.java
+
+        }
+        /*
         shadow(MavenPublication) { publication ->
             project.shadow.component(publication)
+            artifactId = 'kotlinspice-impl'
         }
+         */
     }
 }
 
@@ -82,7 +95,7 @@ if (project.hasProperty("plugin_path") && plugin_path) {
 }
 
 def void yum(String s) {
-    dependencies.compile(s)
+    dependencies.api(s)
 
     //i want these to be system, but this make the pom be runtime :(
     // but this is hacky anyhow
