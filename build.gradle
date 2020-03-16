@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    yum "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     compileOnly 'org.bukkit:bukkit:1.15.2-R0.1-SNAPSHOT'
 
     //this is shit
@@ -34,7 +34,6 @@ dependencies {
 
     yum "org.xerial:sqlite-jdbc:3.+"
     yum "org.slf4j:slf4j-api:1.+"
-
 
     yum 'com.sksamuel.hoplite:hoplite-yaml:1.+'
     yum 'com.sksamuel.hoplite:hoplite-core:1.+'
@@ -75,7 +74,6 @@ publishing {
     publications {
         maven(MavenPublication) {
             from components.java
-
         }
         /*
         shadow(MavenPublication) { publication ->
@@ -96,7 +94,6 @@ if (project.hasProperty("plugin_path") && plugin_path) {
 
 def void yum(String s) {
     dependencies.api(s)
-
     //i want these to be system, but this make the pom be runtime :(
     // but this is hacky anyhow
     // dependencies.shadow(s)
