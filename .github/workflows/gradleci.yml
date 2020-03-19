@@ -18,6 +18,8 @@ jobs:
       run: chmod +x gradlew
     - name: Run Test
       run: gradle test
+    - name: Make Shadowjar
+      run: gradle shadowJar
     - name: Upload build
       uses: actions/upload-artifact@v1
       with:
