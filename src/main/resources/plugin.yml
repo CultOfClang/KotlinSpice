@@ -3,3 +3,6 @@
   version: @version@
   load: STARTUP
   api-version: '1.15'
+  provides : ["KotlinSupport"]
+  loadbefore:
+    - "KotlinSupport"
